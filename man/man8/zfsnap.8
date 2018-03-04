@@ -119,6 +119,34 @@ Skip pools that are scrubbing.
 Verbose output.
 .El
 .
+.Ss backup
+By default,
+.Nm Cm backup
+will backup the latest snapshot. However, options are provided to override
+that behavior.
+.Pp
+Only snapshots created by
+.Nm
+.Pq or, more specifically, snapshots which match the very specific name pattern it employs
+will be considered for backuping.
+.Bl -tag -width Ds
+.It Fl h
+Print a summary of
+.Cm destroy Ap s
+command\[hy]line options and then exit.
+.It Fl n
+Dry\[hy]run. Perform a trial run with no actions actually performed.
+.It Fl p Ar prefix
+Enable filtering to only consider snapshots with
+.Ar prefix
+.It Fl s
+Skip pools that are resilvering.
+.It Fl S
+Skip pools that are scrubbing.
+.It Fl v
+Verbose output.
+.El
+.
 .Ss recurseback
 .Nm Cm recurseback
 is different from `zfs rollback` in that it will rollback for not only the

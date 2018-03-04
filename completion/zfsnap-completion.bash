@@ -50,7 +50,7 @@ __zfsnap_list_flags() {
     local cmd="$1"
 
     case "$cmd" in
-        destroy|snapshot|recurseback|zfsnap)
+        backup|destroy|snapshot|recurseback|zfsnap)
             [ "$cmd" = 'zfsnap' ] && cmd=''
 
             start='false'
@@ -86,7 +86,7 @@ __zfsnap_complete() {
     fi
 
     case "$cmd" in
-        destroy|snapshot)
+        backup|destroy|snapshot)
             case "$prev" in
                 # flags which accept arguments or aren't meant to be used on datasets
                 -a|-h|-F|-p|-V)

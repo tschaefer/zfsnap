@@ -22,6 +22,7 @@ alias __zfsnap_list_datasets '$__ZFSNAP_ZFS list -H -t filesystem,volume -o name
 
 complete zfsnap \
     'p/1/$__zfsnap_list_commands/'\
+    'n/backup/`__zfsnap_list_datasets`/'\
     'n/destroy/`__zfsnap_list_datasets`/'\
     'n/snapshot/`__zfsnap_list_datasets`/'\
     'n/recurseback/`__zfsnap_list_datasets`/'
